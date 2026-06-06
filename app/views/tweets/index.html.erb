@@ -1,0 +1,21 @@
+<h1>投稿篇</h1>
+<h3>一覧ページ</h3>
+<%= link_to "新規投稿へ", new_tweet_path %>
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <%= t.image %>
+      <%= t.text %>
+      <%= t.title %>
+      <%= t.century %>
+      <%= t.place %>
+      <%= link_to "詳細へ", tweet_path(t.id) %>  
+    </div>
+      <%= link_to "編集する", edit_tweet_path(t.id) %>
+      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+  <% end %>
+</div>
+<div class="start">
+            <h6>Are you ready?</h6>
+            <%= link_to "診断を始める", new_perfume_path, class: "link" %>
+</div>

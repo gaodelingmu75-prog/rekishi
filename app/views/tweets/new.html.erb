@@ -1,0 +1,41 @@
+<h1>歴史歴史</h1>
+<h3>新規投稿ページ</h3>
+<%= form_for @tweet do |t| %>
+
+
+  <div class="field">
+    <%= t.label :"タイトル" %>
+    <%= t.text_field :title, :size => 30 %>
+  </div>
+
+
+  <div class="field">
+    <%= t.label :"画像"  %>
+    <%= t.select :image, 
+    [["A", "A"], 
+    ["B", "B"], 
+    ["C", "C"]], include_blank: "選択して下さい" 
+    %>
+  </div>
+
+
+  <div class="field">
+    <%= t.label :"文章"  %>
+    <%= t.text_area :text, :size => "30x2" %>
+  </div>
+
+
+  <div class="field">
+    <%= t.label :"時代"  %>
+    <%= t.text_area :century, :size => "30x2" %>
+  </div>
+
+ <div class="field">
+    <%= t.label :"場所"  %>
+    <%= t.text_area :place, :size => "30x2" %>
+  </div>
+
+  <%= t.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", tweets_path %>
